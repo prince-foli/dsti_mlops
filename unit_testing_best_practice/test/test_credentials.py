@@ -1,10 +1,14 @@
 """Unit tests for credential validation functions."""
 
+import os
 import re
 import sys
 import pytest
 
-sys.path.append('../src')
+# Add the 'src' directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+
+# Now you can import from credentials
 from credentials import *
 
 @pytest.fixture

@@ -1,6 +1,10 @@
-# Always run from unit_testing_best_practice/test
 import sys
-sys.path += ['../src'] 
+import os
+
+# Add the 'src' directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+
+# Now you can import from sample
 from sample import *
 
 def test_answer():
