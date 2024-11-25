@@ -15,7 +15,5 @@ jobs:
           python wine_linear_regression_test.py
           cat metrics.txt
       - run: cat metrics.txt >> report.md
-      - uses: iterative/cml-send-comment@v1
-        with:
-          report: report.md
+      - run: cml-send-comment report.md
           
