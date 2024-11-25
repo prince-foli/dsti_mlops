@@ -14,6 +14,10 @@ jobs:
           pip install -r requirements.txt
           python wine_linear_regression_test.py
           cat metrics.txt
-      - run: cat metrics.txt >> report.md
-      - run: cml-send-comment report.md
+      - name: Write CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat results.txt >> report.md
+          cml comment create report.md
           
