@@ -1,12 +1,21 @@
 name: model-training
+
 on:
-  - push
+  push:
+
+permissions:
+  contents: write  # Allow write access to repository contents
+
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: iterative/setup-cml@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up CML
+        uses: iterative/setup-cml@v1
+
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
