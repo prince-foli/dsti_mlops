@@ -15,4 +15,3 @@ jobs:
           python wine_linear_regression_test.py
           cat metrics.txt >> report.md
           cml comment create report.md
-          
